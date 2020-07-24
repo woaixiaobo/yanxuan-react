@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+//引入路由
+import {BrowserRouter,Route,Link} from 'react-router-dom'
+//引入路由的配置
+import routers from "./config/routers"
+import Personal from "./pages/personal"
+import Home from "./pages/home/index"
+export default class App extends Component {
+  //遍历保存路由当中的所有组件
+  renderRouters=()=>{
+    //创建存放路由的容器
+    const renderRoutes = [];
+    routers.forEach(route => {
+      renderRoutes.push(<Route key={route.path} path={route.path} component={route.component} exact/>)
+    });
+    return renderRoutes
+  }
+  render() {
+    return (
+      <BrowserRouter>
+        {this.renderRouters()}
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;
