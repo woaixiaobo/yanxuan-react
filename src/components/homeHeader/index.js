@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './index.css'
 import Modal from "../modal/index"
 import BScroll from '@better-scroll/core'
-
+import { connect } from 'react-redux'
+import {CateModulesAsync} from "../../redux/actions/actions"
+@connect(state=>({home:state.home}),{CateModulesAsync})
 class index extends Component {
   state={
     person:{
@@ -12,6 +14,10 @@ class index extends Component {
     visible: false,
   }
   componentDidMount(){
+    //发送请求
+    console.log(this.props.home);
+    this.props.CateModulesAsync();
+    //导航滑动初始化
     this.init();
   }
   //是否显示遮罩层
