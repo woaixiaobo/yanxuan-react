@@ -26,7 +26,7 @@ export default class index extends Component {
   render() {
     return (
       <Carousel
-      // autoPlay
+      autoPlay
       loop
       className="my-swipe"
         onChange={(index) => {

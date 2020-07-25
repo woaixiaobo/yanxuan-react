@@ -22,13 +22,13 @@ class index extends Component {
     })
     if(type!=='tuijian'){
       //触发全局事件总线，跟新数据，将搜索框的搜索词重置
-      // this.$bus.$emit('isShow',false);
+      PubSub.publish('isShow', false);
       //发布消息传递当前项数据
       // console.log('发布',this.cateModules[index]);
       const {cateModules} = this.props.home
       PubSub.publish('cateGroy', cateModules[index]);
     }else{
-      // this.$bus.$emit('isShow',true);
+      PubSub.publish('isShow', true);
     }
   }
   //声明周期

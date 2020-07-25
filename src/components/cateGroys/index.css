@@ -1,0 +1,77 @@
+.cateGroys {
+  margin-top: 148px;
+  background-color: #eee;
+}
+.cateGroys .catecontent {
+  margin-top: 20px;
+  height: 500px;
+  background-color: #fff;
+}
+.cateGroys .catecontent .cateheader {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cateGroys .catecontent .cateheader p:nth-of-type(1) {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 6px;
+  margin-top: 20px;
+}
+.cateGroys .catecontent .cateheader p:nth-of-type(2) {
+  color: #999;
+}
+.cateGroys .catecontent .cateList {
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cateGroys .catecontent .cateList .cateItem {
+  height: 590px;
+  width: 345px;
+  margin-right: 20px;
+}
+.cateGroys .catecontent .cateList .cateItem .cateItemHeader img {
+  width: 345px;
+  height: 345px;
+  display: block;
+}
+.cateGroys .catecontent .cateList .cateItem .cateItemHeader .dsc {
+  height: 48px;
+  background: #f1ece2;
+  font-size: 18px;
+  color: #9f8a60;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 48px;
+}
+.cateGroys .catecontent .cateList .cateItem .name {
+  width: 345px;
+  height: 39px;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  word-break: initial;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 28px;
+  margin-top: 20px;
+}
+.cateGroys .catecontent .cateList .cateItem .price {
+  height: 48px;
+  color: #dd1a21;
+  font-size: 32px;
+  margin-left: -5px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1px;
+}
+.cateGroys .catecontent .cateList .cateItem .price span:nth-of-type(2) {
+  font-size: 26px;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
