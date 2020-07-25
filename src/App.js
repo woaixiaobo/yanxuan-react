@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import {BrowserRouter,Route,Link} from 'react-router-dom'
 //引入路由的配置
 import routers from "./config/routers"
-import Personal from "./pages/personal"
-import Home from "./pages/home/index"
+import NavBottom from "./components/navBottom/index"
 export default class App extends Component {
   //遍历保存路由当中的所有组件
   renderRouters=()=>{
@@ -18,6 +17,7 @@ export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <NavBottom/>
         {this.renderRouters()}
       </BrowserRouter>
     )
