@@ -1,0 +1,84 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.modal-mask {
+  position: absolute;
+  top: 80px;
+  width: 750px;
+  height: 1334px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.toggleWrap {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 160px;
+  height: 60px;
+  display: flex;
+  z-index: 999;
+}
+.toggleWrap .linear {
+  width: 60px;
+  height: 60px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #fff 100%);
+}
+.toggleWrap .toggle {
+  width: 100px;
+  height: 51px;
+  text-align: center;
+  background: #fff;
+}
+.toggleWrap .toggle i {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/arrow-down-3-9b31adfa37.png?imageView&type=webp);
+  background-size: 100% 100%;
+  margin-top: 20px;
+  transition: transform 1s ;
+}
+.toggleWrap .toggle i.statle {
+  transform: rotate(180deg);
+  transition: transform 1s ;
+}
+.block {
+  top: 80px;
+  position: absolute;
+  width: 750px;
+  height: 372px;
+  background-color: #fff;
+  padding: 0px 30px;
+  z-index: 1;
+}
+.block p {
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+}
+.block .navItem2 {
+  margin-top: 20px;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+.block .navItem2 span {
+  width: 150px;
+  height: 56px;
+  line-height: 50px;
+  box-sizing: border-box;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  background: #FAFAFA;
+}
+.block .navItem2 span.active {
+  border: 1px solid #DD1A21;
+  color: #DD1A21;
+}

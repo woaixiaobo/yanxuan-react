@@ -1,8 +1,8 @@
 import Home from "../pages/home"
 import Personal from "../pages/personal"
-import Classify from "../components/classify"
-import DeserveBuy from "../components/deserveBuy"
-import CarShop from "../components/carShop"
+import Classify from "../pages/classify"
+import DeserveBuy from "../pages/deserveBuy"
+import CarShop from "../pages/carShop"
 const routers = [
   {
     path:'/',
