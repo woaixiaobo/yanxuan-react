@@ -1,8 +1,9 @@
 import {INDEXDATA} from "./constants"
+import {combineReducers} from "redux";
 
 const indexData = '我是bozai'; //初始化值
 
-function count (prevState = indexData,action){
+function home (prevState = indexData,action){
   console.log(prevState,action);
 
   switch(action.type){
@@ -13,4 +14,6 @@ function count (prevState = indexData,action){
   }
 }
 
-export default count
+export default combineReducers({
+  home,
+})

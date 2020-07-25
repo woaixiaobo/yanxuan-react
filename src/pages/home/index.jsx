@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import HomeHeader from "../../components/homeHeader/index"
 @connect(state=>({
-  count:state
+  home:state.home
 }))
 class index extends Component {
   componentDidMount(){
