@@ -1,4 +1,4 @@
-import {INDEXDATA} from "../constants/constants"
+import {INDEXDATA,CATEMODULES} from "../constants/constants"
 import {combineReducers} from "redux";
 
 const homeData = {
@@ -9,12 +9,17 @@ const homeData = {
 function home (prevState = homeData,action){
   // console.log(prevState,action);
   switch(action.type){
-    case INDEXDATA:
+    case CATEMODULES:
       console.log(action.data);
       return {
         ...prevState,
         cateModules:action.data,
       }
+      case INDEXDATA:
+        return {
+          ...prevState,
+          indexData:action.data,
+        }
     default:
       return prevState
   }

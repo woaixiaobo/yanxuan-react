@@ -17,7 +17,6 @@ class index extends Component {
   }
   //切换选中状态
   changeActive=(type,index)=>{
-    console.log(type,index);
     this.setState({
       active:type
     })
