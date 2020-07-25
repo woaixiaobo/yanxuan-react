@@ -1,5 +1,5 @@
 import {createStore,applyMiddleware} from "redux"
-import reducers from "./reducers"
+import reducers from "./reducers/reducers"
 //引入中间件，可以使用一步的actions
 import thunk from "redux-thunk";
 //引入redux的调试工具

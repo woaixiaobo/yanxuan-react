@@ -4,10 +4,6 @@ import PropTypes from "prop-types";
 import "./index.css"
 class Modal extends Component {
     static propTypes={
-        title:PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.element,
-        ]).isRequired,
         content:PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.element,
@@ -36,7 +32,7 @@ class Modal extends Component {
         this.div.remove();
     }
     render() {
-        const{title,content,visible,hiddenModal,deleteTdo} = this.props
+        const{content,visible,hiddenModal} = this.props
         const Modal=(
             <div className="modal" style={{display:visible?'block':'none'}}>
                 <div className="block">

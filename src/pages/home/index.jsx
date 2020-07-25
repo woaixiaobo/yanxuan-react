@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import HomeHeader from "../../components/homeHeader/index"
-@connect(state=>({
-  home:state.home
-}))
+import {mutationssAsync} from "../../redux/actions/actions"
 class index extends Component {
   componentDidMount(){
-    console.log(this.props);
+    this.props.mutationssAsync([1,2,3]);
   }
   render() {
     return (
@@ -16,4 +14,4 @@ class index extends Component {
     )
   }
 }
-export default index
+export default connect(state=>({home:state.home}),{mutationssAsync})(index)
