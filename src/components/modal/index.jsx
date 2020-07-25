@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import "./index.css"
 class Modal extends Component {
     static propTypes={
+        active:PropTypes.string,
+        changeActive:PropTypes.func,
+        cateModules:PropTypes.array,
         content:PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.element,
@@ -32,14 +35,20 @@ class Modal extends Component {
         this.div.remove();
     }
     render() {
-        const{content,visible,hiddenModal} = this.props
+        const{content,visible,hiddenModal,changeActive,cateModules,active} = this.props
         const Modal=(
             <div className="modal" style={{display:visible?'block':'none'}}>
                 <div className="block">
                     <p>全部频道</p>
                     <div className="navItem2" >
-                    <span >推荐</span>
-                    <span >居家生活</span>
+                    <span className={`${active==='tuijian'?'active':''}`} onClick={()=>changeActive('tuijian')}>推荐</span>
+                    {
+                        cateModules.map((item,index)=>{
+                            return(
+                                <span key={index} onClick={()=>changeActive(item.name,index)} className={`${active===item.name?'active':''}`}>{item.name}</span>
+                            )
+                        })
+                    }
                     </div>
                 </div>
                 {content}

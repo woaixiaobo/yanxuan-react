@@ -115,6 +115,9 @@ class index extends Component {
     </div>
     {/* <!-- 遮罩层 --> */}
     <Modal title="bozai" 
+      active={this.state.active}
+      cateModules={cateModules}
+      changeActive={this.changeActive}
       content={
         <div className="toggleWrap">
         <div className="linear"></div>
