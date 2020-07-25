@@ -11,6 +11,6 @@ export const CateModulesAsync = ()=>{
   return async(dispatch)=>{
     let result = await getCateModules();
     //执行异步代码发送请求
-    return dispatch(CateModules([1,2,3]))
+    return dispatch(CateModules(result.data))
   }
 }

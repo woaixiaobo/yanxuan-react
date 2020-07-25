@@ -1,24 +1,46 @@
 import React, { Component } from 'react';
 import './index.css'
+//遮罩层
 import Modal from "../modal/index"
+//滑动
 import BScroll from '@better-scroll/core'
+//订阅发布
+import PubSub from "pubsub-js"
+//redux
 import { connect } from 'react-redux'
 import {CateModulesAsync} from "../../redux/actions/actions"
 @connect(state=>({home:state.home}),{CateModulesAsync})
 class index extends Component {
   state={
-    person:{
-        name:"bozai",
-        age:998
-    },
+    active:'tuijian',//选中的状态
     visible: false,
   }
-  componentDidMount(){
-    //发送请求
-    console.log(this.props.home);
-    this.props.CateModulesAsync();
+  //切换选中状态
+  changeActive=(type,index)=>{
+    console.log(type,index);
+    this.setState({
+      active:type
+    })
+    if(type!=='tuijian'){
+      //触发全局事件总线，跟新数据，将搜索框的搜索词重置
+      // this.$bus.$emit('isShow',false);
+      //发布消息传递当前项数据
+      // console.log('发布',this.cateModules[index]);
+      const {cateModules} = this.props.home
+      PubSub.publish('cateGroy', cateModules[index]);
+    }else{
+      // this.$bus.$emit('isShow',true);
+    }
+  }
+  //声明周期
+  async componentDidMount(){
+    //发送请求  必须是await 否则首次不会滑动
+    await this.props.CateModulesAsync();
     //导航滑动初始化
     this.init();
+  }
+  componentDidUpdate(){
+    // this.state.Bscroll.destroy()
   }
   //是否显示遮罩层
   modal=()=>{
@@ -45,16 +67,17 @@ class index extends Component {
       scrollX: true,
       probeType: 3 // listening scroll hook
     })
-    this._registerHooks(['scroll', 'scrollEnd'], () => {
-      // console.log('done')
-    })
+    this._registerHooks(['scroll', 'scrollEnd'], () => {})
   };
   _registerHooks=(hookNames, handler)=> {
     hookNames.forEach((name) => {
-      this.bs.on(name, handler)
+    this.bs.on(name, handler)
     })
   }
   render() {
+    //首页导航的数据
+    const {cateModules} = this.props.home
+    const {active} = this.state
     return (
       <div className="header">
       {/* 搜索  */}
@@ -69,18 +92,18 @@ class index extends Component {
       {/* 导航  */}
     <div className="horizontal-container">
       <div className="scroll-wrapper" >
-        <div className="scroll-content" >
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          <div className="scroll-item" >推荐</div>
-          
-          <div  className="scroll-item"></div>
+        <div className="scroll-content">
+          <div
+          onClick={()=>this.changeActive('tuijian',0)}
+          className={`scroll-item ${active==='tuijian'?'active':''}`} >推荐</div>
+          {
+            cateModules.map((item,index)=>{
+              return <div key={index}
+              onClick={()=>this.changeActive(item.name,index)}
+              className={`scroll-item ${active===item.name?'active':''}`} 
+              >{item.name}</div>
+            })
+          }
         </div>
       </div> 
     </div>
