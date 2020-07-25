@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./index.css"
+import Swiper from "../swiper/index"
 import { connect } from 'react-redux'
 import {indexeAsync} from "../../redux/actions/actions"
 @connect(state=>({home:state.home}),{indexeAsync})
@@ -15,9 +16,11 @@ class index extends Component {
   }
   render() {
     const {indexData}  = this.props.home
-    console.log(indexData);
+    // console.log(indexData);
     return (
       <div className="homeContent">
+        {/* 轮播 */}
+        <Swiper/>
         {/* <!-- 三个横向标题 --> */}
         <ul className="grow">
           <li>
@@ -210,7 +213,7 @@ class index extends Component {
             indexData.sceneLightShoppingGuideModule&&
             indexData.sceneLightShoppingGuideModule.slice(0,2).map((item,index)=>{
               return(
-                <div className="item"  >
+                <div className="item"  key={index}>
                   <p>{item.styleItem.title}</p>
                   <p>{item.styleItem.desc}</p>
                   <div className="images">

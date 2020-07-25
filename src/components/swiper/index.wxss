@@ -1,0 +1,7 @@
+.my-swipe {
+  height: 320px;
+  width: 750px;
+}
+.my-swipe .za-carousel__item img {
+  height: 370px;
+}

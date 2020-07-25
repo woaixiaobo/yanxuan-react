@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
+import Swiper from "../../components/swiper/index"
 class index extends Component {
   render() {
     return (
-      <div>
-        我是购物车
-      </div>
+      <Swiper/>
     );
   }
 }

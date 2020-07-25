@@ -1,0 +1,10 @@
+.my-swipe {
+  height: 320px;
+  width: 750px;
+  touch-action: none;
+  /* 应用 CSS 属性 touch-action: none; 
+  这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发 */
+}
+.my-swipe .za-carousel__item img {
+  height: 370px;
+}
