@@ -5,12 +5,15 @@ import App from './App';
 //停入移动端ui库
 import { Carousel  } from 'zarm';
 import 'zarm/dist/zarm.min.css';
-
+//引入redux
+import { Provider } from 'react-redux'
+import store from "./redux/store"
+//移动端适配
 import 'lib-flexible'
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

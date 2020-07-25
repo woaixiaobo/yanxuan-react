@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
-import {Link} from "react-router-dom"
+import { connect } from 'react-redux'
 import HomeHeader from "../../components/homeHeader/index"
-export default class index extends Component {
+@connect(state=>({
+  count:state
+}))
+class index extends Component {
+  componentDidMount(){
+    console.log(this.props);
+  }
   render() {
     return (
       <div>
@@ -10,3 +16,4 @@ export default class index extends Component {
     )
   }
 }
+export default index

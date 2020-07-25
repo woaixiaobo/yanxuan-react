@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //引入路由
-import {BrowserRouter,Route,Link} from 'react-router-dom'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
 //引入路由的配置
 import routers from "./config/routers"
 import NavBottom from "./components/navBottom/index"
@@ -18,7 +18,9 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <NavBottom/>
-        {this.renderRouters()}
+        <Switch>
+          {this.renderRouters()}
+        </Switch>
       </BrowserRouter>
     )
   }
