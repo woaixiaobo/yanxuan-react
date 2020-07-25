@@ -47,7 +47,7 @@ class Modal extends Component {
                     </div>
                 </div>
                 {content}
-                <div className="modal-mask"></div>
+                <div className="modal-mask" onClick={hiddenModal}></div>
             </div>
         )
         return ReactDOM.createPortal(Modal,this.div)

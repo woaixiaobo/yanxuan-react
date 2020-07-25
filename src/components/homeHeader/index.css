@@ -86,7 +86,7 @@
 }
 .header .toggleWrap {
   position: fixed;
-  top: 80px;
+  top: 90px;
   right: 0;
   width: 160px;
   height: 60px;
@@ -116,40 +116,4 @@
 .header .toggleWrap .toggle i.statle {
   transform: rotate(180deg);
   transition: transform 1s ;
-}
-.header .van-overlay {
-  top: 88px;
-}
-.header .van-overlay .block {
-  width: 750px;
-  height: 372px;
-  background-color: #fff;
-  padding: 0px 30px;
-}
-.header .van-overlay .block p {
-  height: 60px;
-  line-height: 60px;
-  font-size: 30px;
-}
-.header .van-overlay .block .navItem2 {
-  margin-top: 20px;
-  display: flex;
-  white-space: nowrap;
-  flex-wrap: wrap;
-}
-.header .van-overlay .block .navItem2 span {
-  width: 150px;
-  height: 56px;
-  line-height: 50px;
-  box-sizing: border-box;
-  margin-left: 20px;
-  margin-bottom: 40px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  text-align: center;
-  background: #FAFAFA;
-}
-.header .van-overlay .block .navItem2 span.active {
-  border: 1px solid #DD1A21;
-  color: #DD1A21;
 }

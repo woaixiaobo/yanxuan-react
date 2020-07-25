@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './index.css'
 import Modal from "../modal/index"
+import BScroll from '@better-scroll/core'
+
 class index extends Component {
   state={
     person:{
@@ -8,6 +10,9 @@ class index extends Component {
         age:998
     },
     visible: false,
+  }
+  componentDidMount(){
+    this.init();
   }
   //是否显示遮罩层
   modal=()=>{
@@ -23,6 +28,26 @@ class index extends Component {
         visible:false
     })
   }
+   //导航滑动
+  init=()=> {
+    this.bs = new BScroll('.scroll-wrapper', {
+      mouseWheel:true,
+      disableTouch:false,
+      disableMouse:false,
+      resizePolling:0,
+      click:true,//开启点击事件
+      scrollX: true,
+      probeType: 3 // listening scroll hook
+    })
+    this._registerHooks(['scroll', 'scrollEnd'], () => {
+      // console.log('done')
+    })
+  };
+  _registerHooks=(hookNames, handler)=> {
+    hookNames.forEach((name) => {
+      this.bs.on(name, handler)
+    })
+  }
   render() {
     return (
       <div className="header">
@@ -36,13 +61,20 @@ class index extends Component {
       <div className="btn">登录</div>
     </div>
       {/* 导航  */}
-    <div className="horizontal-container" style={{display:!this.state.visible?'block':'none'}}>
+    <div className="horizontal-container">
       <div className="scroll-wrapper" >
         <div className="scroll-content" >
           <div className="scroll-item" >推荐</div>
-          <div  
-            className="scroll-item"
-          ></div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          <div className="scroll-item" >推荐</div>
+          
+          <div  className="scroll-item"></div>
         </div>
       </div> 
     </div>
@@ -50,25 +82,16 @@ class index extends Component {
     <div className="toggleWrap">
       <div className="linear"></div>
       <div className="toggle" onClick={this.modal}>
-        <i></i>
+        <i className={this.state.visible?'statle':'none'}></i>
       </div>
     </div>
     {/* <!-- 遮罩层 --> */}
-    {/* <van-overlay >
-      <div className="block">
-        <p>全部频道</p>
-        <div className="navItem2" >
-          <span  >推荐</span>
-          <span></span>
-        </div>
-      </div>
-    </van-overlay> */}
     <Modal title="bozai" 
       content={
         <div className="toggleWrap">
         <div className="linear"></div>
         <div className="toggle" onClick={this.modal}>
-          <i></i>
+          <i className={this.state.visible?'statle':'none'}></i>
         </div>
       </div>}
       visible={this.state.visible}
