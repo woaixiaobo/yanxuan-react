@@ -4,6 +4,7 @@ import Response from "../components/response/index"
 import Classify from "../pages/classify/index.jsx"
 import DeserveBuy from "../pages/deserveBuy/index.jsx"
 import CarShop from "../pages/carShop/index.jsx"
+import Search from "../components/search/index.jsx"
 const routers = [
   {
     path:'/',
@@ -19,6 +20,11 @@ const routers = [
     path:'/classify',
     component:Classify,
     title:'分类'
+  },
+  {
+    path:'/search',
+    component:Search,
+    title:'搜索'
   },
   {
     path:'/deserveBuy',

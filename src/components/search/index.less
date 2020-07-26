@@ -1,0 +1,67 @@
+body{
+  background-color: #eee;
+  .za-search-bar{
+    padding-top: 20px;
+    height: 88px;
+    .za-search-bar__content{
+      height: 50px;
+      border-radius: 15px;
+    }
+  }
+  .searchContent{
+    width: 100%;
+    height: 360px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 30px;
+    .title{
+      height: 90px;
+      color: #999;
+      font-size: 28px;
+      line-height: 90px;
+    }
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      white-space: nowrap;
+      li{
+        box-sizing: border-box;
+        padding: 0px 14px;
+        height: 48px;
+        line-height: 46px;
+        border: 1px solid #999;
+        border-radius: 6px;
+        margin-right: 28px;
+        margin-bottom: 40px;
+        &:nth-of-type(odd){
+          border: 1px solid #DD1A21;
+          color: #DD1A21;
+        }
+      }
+    }
+  }
+  // 搜索时显示的内容
+  .inSearchContent{
+    padding: 25px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    background-color: #ffffff;
+    font-size: 28px;
+    li{
+      height: 90px;
+      line-height: 90px;
+      border-bottom: 1px solid #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:nth-last-of-type(1){
+        border: none;
+      }
+      img{
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

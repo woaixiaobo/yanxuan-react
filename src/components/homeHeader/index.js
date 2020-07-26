@@ -8,7 +8,9 @@ import BScroll from '@better-scroll/core'
 import PubSub from "pubsub-js"
 //redux
 import { connect } from 'react-redux'
+import {withRouter} from "react-router-dom"
 import {CateModulesAsync} from "../../redux/actions/actions"
+@withRouter
 @connect(state=>({home:state.home}),{CateModulesAsync})
 class index extends Component {
   state={
@@ -40,6 +42,13 @@ class index extends Component {
   }
   componentDidUpdate(){
     // this.state.Bscroll.destroy()
+  }
+  //点击到搜索界面
+  toSearch=()=>{
+    let nowCompontent = this.props.location.pathname.split('/')[1]
+    console.log(nowCompontent);
+    this.props.history.push(`/search?perRoute=${nowCompontent}`)
+    PubSub.publish('isResponse', false);
   }
   //是否显示遮罩层
   modal=()=>{
@@ -80,7 +89,7 @@ class index extends Component {
     return (
       <div className="header">
       {/* 搜索  */}
-    <div className="search">
+    <div className="search" onClick={this.toSearch}>
       <img src="//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png?imageView&type=webp" alt=""/>
       <div className="in">
         <i></i>
