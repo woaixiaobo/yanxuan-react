@@ -31,7 +31,7 @@ class index extends Component {
 
   render() {
     const {title,background} = this.props
-    console.log(title,background);
+    // console.log(title,background);
     return (
       <div className="buyHeader" style={{backgroundColor:background}}>
         <span className="homeIcon" onClick={this.toHome}></span>

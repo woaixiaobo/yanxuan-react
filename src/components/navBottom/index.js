@@ -8,7 +8,10 @@ class index extends Component {
     activeFlag:'home',//选中的标识
   }
   componentDidMount(){
-    console.log(this.props.history);
+    //读取路径赋值给底部导航的选中状态，使其刷新后保持选中
+    this.setState({
+      activeFlag:this.props.location.pathname.split('/')[1]
+    })
   }
   changeActive(type){
     //跟新界面
