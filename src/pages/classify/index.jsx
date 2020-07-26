@@ -5,17 +5,31 @@ export default class index extends Component {
   state = {
     active:"",
     cateGroys:[],//请求的数据
+    cateGroy:{},//当前项的数据
   }
   async componentDidMount(){
      //获取分类数据
     let result = await getCateGroy()
     this.setState({
       cateGroys: result.data,
-      active:result.data[0].name
+      active:result.data[0].name,
+      cateGroy:result.data[0]
     })
   }
+  //改变选中状态
+  changeActive=(e)=>{
+    let {cateGroys,cateGroy} = this.state
+    if(e.target.nodeName==="LI"){
+      //查找对应的当前项的对象数据
+      cateGroy = cateGroys.find(item=>item.name===e.target.dataset.name)
+      this.setState({
+        active:e.target.dataset.name,
+        cateGroy
+      })
+    }
+  }
   render() {
-    const {cateGroys,active} = this.state
+    const {cateGroys,active,cateGroy} = this.state
     return (
       <div className="classSearch"> 
         {/* <!-- 搜索 --> */}
@@ -27,25 +41,33 @@ export default class index extends Component {
         </div>
         {/* <!-- 内容 --> */}
         <div className="content">
-          <div className="left">
+          <div className="left" onClick={this.changeActive}>
             <ul>
               {
                 cateGroys&&cateGroys.map((item,index)=>{
                   return (
-                    <li className={active===item.name?'active':''} key={index}>{item.name}</li>
+                    <li data-name={item.name} className={active===item.name?'active':''} key={index}>{item.name}</li>
                   )
                 })
               }
             </ul>
           </div>
-          <div className="right" v-if="cateGroy.subCateList">
+          <div className="right">
             <div className="titleImage">
-              <img />
+              <img src={cateGroy.imgUrl}/>
             </div>
-              <div className="imageItem">
-                < img />
-                <span></span>
-              </div>
+            {
+              cateGroy.subCateList&&
+              cateGroy.subCateList.slice(0,9).map((item,index)=>{
+                return (
+                  <div className="imageItem" key={index}>
+                    < img src={item.wapBannerUrl}/>
+                    <span>{item.frontName}</span>
+                  </div>
+                )
+              })
+            }
+              
           </div>
         </div>
       </div>
