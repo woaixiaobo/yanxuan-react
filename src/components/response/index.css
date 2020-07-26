@@ -1,0 +1,88 @@
+.personal {
+  background-color: #F2F5F4;
+  height: 1334px;
+}
+.personal .logoWarp {
+  height: 702px;
+  background-color: #F2F5F4;
+  position: relative;
+}
+.personal .logoWarp img {
+  width: 268px;
+  height: 90px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  margin: auto;
+}
+.personal .logoWarp .login {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+.personal .logoWarp .login .comon {
+  width: 670px;
+  height: 94px;
+  border: 1px solid #DD1A21;
+  margin: auto;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 28px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.personal .logoWarp .login .comon i {
+  width: 40px;
+  height: 40px;
+  background: url('http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/login-s5ca4cb2b91-2c606efd24.png?imageView&type=webp');
+  background-size: 100%;
+  background-position-y: -50px;
+}
+.personal .logoWarp .login .comon span {
+  margin-left: 10px;
+}
+.personal .logoWarp .login .phone {
+  display: flex;
+  margin-bottom: 30px;
+  line-height: -28px;
+  background-color: #DD1A21;
+}
+.personal .logoWarp .login .email {
+  color: #DD1A21;
+}
+.personal .logoWarp .login .email i {
+  background-position-y: 0;
+}
+.personal .bottom {
+  background-color: #F2F5F4;
+  position: relative;
+  bottom: -50px;
+}
+.personal .bottom .container {
+  display: flex;
+  justify-content: center;
+  margin-top: 350px;
+}
+.personal .bottom .container div {
+  border-right: 1px solid #979797;
+  padding: 0px 45px;
+  font-size: 28px;
+  color: #666;
+  display: flex;
+}
+.personal .bottom .container div:last-of-type {
+  border: 0px;
+}
+.personal .bottom .container div:nth-of-type(2) i {
+  font-size: 30px;
+}
+.personal .bottom .container div i {
+  font-size: 36px;
+  color: #666;
+  margin-right: 10px;
+  line-height: 40px;
+}

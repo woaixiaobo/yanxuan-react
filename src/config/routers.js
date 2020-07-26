@@ -1,5 +1,6 @@
 import Home from "../pages/home/index.jsx"
 import Personal from "../pages/personal/index.jsx"
+import Response from "../components/response/index"
 import Classify from "../pages/classify/index.jsx"
 import DeserveBuy from "../pages/deserveBuy/index.jsx"
 import CarShop from "../pages/carShop/index.jsx"
@@ -33,6 +34,11 @@ const routers = [
     path:'/personal',
     component:Personal,
     title:'个人中心'
+  },
+  {
+    path:'/response',
+    component:Response,
+    title:'登录'
   }
 ]
 export default routers

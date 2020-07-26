@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PubSub from "pubsub-js"
 import {withRouter} from "react-router-dom"
 //引入css文件
 import './index.css'
@@ -12,8 +13,12 @@ class index extends Component {
     this.setState({
       activeFlag:this.props.location.pathname.split('/')[1]
     })
+    if(this.props.location.pathname.split('/')[1]==='response'){
+      PubSub.publish('isResponse', false);
+      console.log(this.props.location.pathname.split('/')[1]);
+    }
   }
-  changeActive(type){
+    changeActive(type){
     //跟新界面
     let {activeFlag} = this.state
     activeFlag = type
@@ -22,6 +27,7 @@ class index extends Component {
     })
     //跳转到对应的界面
     this.props.history.push(`/${type}`)
+    PubSub.publish('isResponse', true);
     // if(type==='personal'){
     //    //如果点击的是个人中心触发全局事件总线，
     //   // this.$bus.$emit('isPersonal',false)

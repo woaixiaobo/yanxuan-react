@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./index.css"
 import PropTypes from "prop-types";
+import PubSub from "pubsub-js"
 import {withRouter} from "react-router-dom"
 @withRouter
 class index extends Component {
@@ -15,11 +16,13 @@ class index extends Component {
   toHome=()=>{
     this.props.history.push('/home')
     // this.$bus.$emit('isPersonal',true)
+    PubSub.publish('isResponse', true);
   }
   //去搜索
   toSearch=()=>{
     //当前页面路径
     let now = this.props.match.path.split('/')[1]
+    PubSub.publish('isResponse', false);
     // this.$bus.$emit('isPersonal',false)
     this.props.history.push(`/search?perRoute=${now}`)
   }
@@ -27,6 +30,7 @@ class index extends Component {
   toCarShop=()=>{
     this.props.history.push('/carShop')
     // this.$bus.$emit('isPersonal',true)
+    PubSub.publish('isResponse', true);
   }
 
   render() {

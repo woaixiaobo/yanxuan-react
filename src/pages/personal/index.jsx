@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import "./index.css"
 export default class index extends Component {
-  // componentDidMount(){
-  //   console.log(this.props.history);
-  // }
+  componentDidMount(){
+    if(!localStorage.getItem("user")){
+      this.props.history.push('/response')
+      // console.log(this.props);
+    }
+  }
   render() {
     return (
       <div className="responalContainer">
@@ -106,7 +109,7 @@ export default class index extends Component {
           </li>
         </ul>
         {/* <!-- 退出登录 --> */}
-        <div class="denglu">退出登录</div>
+        <div className="denglu">退出登录</div>
       </div>
     )
   }
