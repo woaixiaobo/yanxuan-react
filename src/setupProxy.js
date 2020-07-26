@@ -28,7 +28,7 @@ module.exports = function(app){
   app.use(
     "/SearchFirst",
       createProxyMiddleware({
-        target: 'https://m.you.163.com/xhr/search/searchAutoComplete.json',
+        target: 'https://m.you.163.com/xhr/search/init.json',
         changeOrigin: true, // 支持跨域
         pathRewrite: {'^/SearchFirst' : ''}
       })
