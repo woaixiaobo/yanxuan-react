@@ -1,0 +1,42 @@
+.buy {
+  background-color: #eee;
+}
+.buy .swiperTabContainer {
+  position: relative;
+  height: 685px;
+}
+.buy .swiperTabContainer .swiperTab {
+  height: 524px;
+  position: relative;
+}
+.buy .swiperTabContainer .swiperTab img {
+  height: 518px;
+}
+.buy .swiperTabContainer .swiperTab img:nth-of-type(2) {
+  width: 124px;
+  height: 69px;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}
+.buy .swiperTabContainer .swiperTab .title {
+  position: absolute;
+  left: 146px;
+  top: 76px;
+  color: #fff;
+  font-size: 32px;
+}
+.buy .swiperTabContainer .swiperTab .title span:nth-of-type(1) {
+  margin-right: 10px;
+}
+.buy .swiperTabContainer .scroll {
+  position: absolute;
+  top: 140px;
+  margin-left: 20px;
+  width: 710px;
+  height: 540px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 40px 10px;
+}

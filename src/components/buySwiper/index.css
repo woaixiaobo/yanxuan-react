@@ -1,0 +1,56 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2);
+  width: 180px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide .slideItem {
+  width: 100%;
+  height: 201px;
+  text-align: center;
+  margin-right: 20px;
+}
+.swiper-slide .slideItem img {
+  width: 120px;
+  height: 120px;
+}
+.swiper-slide .slideItem .texcontent {
+  width: 180px;
+}
+.swiper-slide .slideItem .texcontent p {
+  text-align: center;
+}
+.swiper-slide .slideItem .texcontent p:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 28px;
+}
+.swiper-slide .slideItem .texcontent p:nth-of-type(2) {
+  color: #999;
+  font-size: 14px;
+}
+.swiper-container-horizontal > .swiper-scrollbar {
+  height: 5px;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}

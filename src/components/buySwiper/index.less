@@ -1,0 +1,59 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide {
+  // ---swiper-theme-color: #ff6600;
+  // --swiper-pagination-color: #00ff33;/* 两种都可以 */
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2);
+  width: 90*2px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  .slideItem{
+    width: 100%;
+    height: 100.5*2px;
+    text-align: center;
+    margin-right: 20px;
+    img{
+      width: 60*2px;
+      height: 60*2px;
+    }
+    .texcontent{
+      width: 90*2px;
+      p{
+        text-align: center;
+        &:nth-of-type(1){
+          font-weight: 700;
+          font-size: 28px;
+        }
+        &:nth-of-type(2){
+          color: #999;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+}
+.swiper-container-horizontal > .swiper-scrollbar{
+  height: 5px;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
