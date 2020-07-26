@@ -1,0 +1,96 @@
+.water-content {
+  box-sizing: border-box;
+  padding: 20px 0px 0px 25px;
+  background-color: #eee;
+  column-count: 2;
+  column-gap: 0;
+}
+.water-content .cell-item {
+  width: 340px;
+  overflow: hidden;
+  box-sizing: border-box;
+  break-inside: avoid;
+  border-radius: 6px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #fff;
+  margin-right: 20px;
+  height: 100%;
+}
+.water-content .cell-item img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+.water-content .cell-item img.active {
+  transform: scaleX(1.8);
+  height: 345px;
+}
+.water-content .cell-item .item-body .item-desc {
+  box-sizing: border-box;
+  width: 343px;
+  font-size: 28px;
+  color: #333;
+  padding: 10px 10px 20px 10px;
+}
+.water-content .cell-item .item-body .item-footer {
+  width: 343px;
+  padding: 10px 10px 0px 10px;
+}
+.water-content .cell-item .item-body .item-footer .left {
+  height: 89px;
+  margin-bottom: -10px;
+  position: relative;
+}
+.water-content .cell-item .item-body .item-footer .left .avatar {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: -12px;
+  background-size: 100%;
+}
+.water-content .cell-item .item-body .item-footer .left .name {
+  display: inline-block;
+  color: #999;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.water-content .cell-item .item-body .item-footer .left .read {
+  position: absolute;
+  right: 20px;
+  bottom: 45px;
+  display: flex;
+}
+.water-content .cell-item .item-body .item-footer .left .read img {
+  width: 32px;
+  height: 32px;
+}
+.water-content .cell-item .item-body .item-footer .left .read span {
+  display: inline-block;
+  font-size: 12px;
+  color: #999;
+  line-height: 30px;
+}
+.water-content .cell-item .item-body .item-footer .like {
+  height: 80px;
+  margin-top: -20px;
+  border-top: 2px solid #eee;
+  display: flex;
+}
+.water-content .cell-item .item-body .item-footer .like span:nth-of-type(1) {
+  display: inline-block;
+  width: 207px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.water-content .cell-item .item-body .item-footer .like span:nth-of-type(2) {
+  line-height: 80px;
+  color: #DD1A21;
+  margin-left: 10px;
+}
+.water-content .cell-item .item-body .item-footer .like span:nth-of-type(2) img {
+  width: 10px;
+  height: 18px;
+}

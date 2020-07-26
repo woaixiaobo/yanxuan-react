@@ -1,0 +1,103 @@
+.water-content{
+  box-sizing: border-box;
+  padding: 20px 0px 0px 25px;
+  background-color: #eee;
+  column-count: 2;
+  column-gap: 0;
+  .cell-item{
+    width: 170*2px;
+    overflow: hidden;
+    box-sizing: border-box;
+    break-inside: avoid;
+    border-radius: 6px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #fff;
+    margin-right: 20px;
+    height: 100%;
+    img{
+      width: 100%;
+      border-radius: 10px;
+      // height: auto;
+      display: block;
+      &.active{
+        transform: scaleX(1.8);
+        height: 172.5*2px;
+      }
+    }
+    .item-body{
+      .item-desc{
+        box-sizing: border-box;
+        width: 171.5*2px;
+        // height: 49*2px;
+        font-size: 28px;
+        color: #333;
+        padding: 10px 10px 20px 10px;
+      }
+      .item-footer{
+        width: 171.5*2px;
+        padding: 10px 10px 0px 10px;
+        .left{
+          height: 44.5*2px;
+          margin-bottom: -10px;
+          position: relative;
+          .avatar{
+            display: inline-block;
+            width: 24*2px;
+            height: 24*2px;
+            border-radius: 50%;
+            margin-bottom: -12px;
+            background-size: 100%;
+          }
+          .name{
+            display: inline-block;
+            color: #999;
+            margin-left: 10px;
+            margin-top: 10px;
+          }
+          .read{
+            position: absolute;
+            right: 20px;
+            bottom: 45px;
+            display: flex;
+            img{
+              width: 32px;
+              height: 32px;
+            }
+            span{
+              display: inline-block;
+              font-size: 12px;
+              color: #999;
+              line-height: 30px;
+            }
+          }
+          }
+          .like{
+            height: 40*2px;
+            margin-top: -20px;
+            border-top: 2px solid #eee;
+            display: flex;
+            span{
+              &:nth-of-type(1){
+                display: inline-block;
+                // line-height: 80px;
+                width: 103.5*2px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              &:nth-of-type(2){
+                line-height: 80px;
+                color: #DD1A21;
+                margin-left: 10px;
+                img{
+                  width: 10px;
+                  height: 18px;
+                }
+              }
+            }
+          }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ThreeIcon from "../../components/threeIcon/index"
 import BuySwiper from "../../components/buySwiper"
+import WaterFall from "../../components/waterfall"
 import "./index.css"
 class index extends Component {
   render() {
@@ -24,6 +25,8 @@ class index extends Component {
             <BuySwiper/>
           </div>
         </div>
+        {/* 瀑布流 */}
+        <WaterFall/>
       </div>
     );
   }
