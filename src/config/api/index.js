@@ -14,3 +14,8 @@ export const getSearchFirst = ()=>axios(`/SearchFirst`)
 export const getSearch = (keywordPrefix)=>axios(`/Search?keywordPrefix=${keywordPrefix}`)
 //触底瀑布
 export const getWaterArgin = ({page,size})=>axios(`/waterAragin?page=${page}&size=${size}`)
+//注册接口
+export const register = ({user,code}) => axios.post('/api/login', {
+  user,
+  code,
+})

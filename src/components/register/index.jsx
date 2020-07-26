@@ -1,6 +1,48 @@
 import React, { Component } from 'react'
+import {register} from "../../config/api/index"
+import PubSub from "pubsub-js"
+import {withRouter} from "react-router-dom"
 import "./index.css"
-export default class index extends Component {
+@withRouter
+class index extends Component {
+  state = {
+    phone:'',
+    password:'',
+  }
+  //收集输入的数据
+  change=(e,type)=>{
+    if(type==='phone'){
+      // console.log(e.target.value.trim(),type);
+      this.setState({
+        phone:e.target.value.trim(),
+      })
+    }else{
+      // console.log(e.target.value.trim(),type);
+      this.setState({
+        password:e.target.value.trim(),
+      })
+    }
+  }
+  //点击登录
+  onSubmit=async()=>{
+    const {phone,password} = this.state
+    let result = await register({
+      user:phone,
+      code:password
+    })
+    if(result.data.code===200){
+      if(!localStorage.getItem("user")){
+        localStorage.setItem("user",JSON.stringify(result.data.name))
+      }
+      PubSub.publish('isResponse', true);
+      // this.$toast('登录成功');
+      //跳转到首页
+      this.props.history.push('/personal')
+    }else{
+      // this.$toast('密码错误');
+      console.log('密码错误');
+    }
+  }
   render() {
     return (
       <div className="register">
@@ -9,14 +51,14 @@ export default class index extends Component {
         {/* <!-- 表单 --> */}
         <div className="from">
           <form action="">
-            <input className="inputcom" type="text" placeholder="请输入手机号"/> <br/>
-            <input className="inputcom" type="password" placeholder="请输入短信验证码"/>
+            <input className="inputcom" onChange={(e)=>this.change(e,'phone')} type="text" placeholder="请输入手机号"/> <br/>
+            <input className="inputcom" onChange={(e)=>this.change(e,'password')} type="password" placeholder="请输入短信验证码"/>
             <div className="problems">
                 <span>遇到问题 ?</span>
                 <span>使用密码验证登录</span>
               </div>
               <div style={{margin:'16px 16px 0px 16px'}}>
-                <button type="submit">
+                <button type="button" onClick={this.onSubmit}>
                   提交
                 </button>
               </div>
@@ -40,3 +82,4 @@ export default class index extends Component {
     )
   }
 }
+export default index
