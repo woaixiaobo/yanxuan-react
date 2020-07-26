@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./index.css"
 import {getCateGroy} from "../../config/api/index"
+import PubSub from "pubsub-js"
 export default class index extends Component {
   state = {
     active:"",
@@ -28,12 +29,19 @@ export default class index extends Component {
       })
     }
   }
+  //点击去搜索
+  toSearch=()=>{
+    let nowCompontent = this.props.location.pathname.split('/')[1]
+    console.log(nowCompontent);
+    this.props.history.push(`/search?perRoute=${nowCompontent}`)
+    PubSub.publish('isResponse', false);
+  }
   render() {
     const {cateGroys,active,cateGroy} = this.state
     return (
       <div className="classSearch"> 
         {/* <!-- 搜索 --> */}
-        <div className="search" >
+        <div className="search" onClick={this.toSearch}>
           <div className="in">
             <i></i>
             <span>搜索商品, 共34101款好物</span>
