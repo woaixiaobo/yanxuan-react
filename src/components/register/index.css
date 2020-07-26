@@ -1,0 +1,94 @@
+.register {
+  height: 1234px;
+  background-color: #fff;
+  position: relative;
+}
+.register img {
+  width: 268px;
+  height: 90px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5%;
+}
+.register .from {
+  height: auto;
+  position: absolute;
+  top: 16%;
+  padding: 0px 20px;
+}
+.register .from ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #999;
+}
+.register .from form {
+  width: 710px;
+}
+.register .from form input {
+  border: none;
+}
+.register .from form .inputcom {
+  width: 90%;
+  height: 100px;
+  margin-left: 30px;
+  border-bottom: 1px solid #eee;
+}
+.register .from form input[type='password'] {
+  margin-bottom: 20px;
+}
+.register .from form .problems {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  font-size: 26px;
+}
+.register .from form .problems span:nth-of-type(1) {
+  color: #999;
+}
+.register .from form button {
+  background-color: #DD1A21;
+  border: none;
+  width: 100%;
+  height: 90px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 28px;
+}
+.register .from form input[type='checkbox'] {
+  margin-left: 30px;
+  width: 34px;
+  height: 34px;
+  -webkit-appearance: none;
+  border: 1px solid #999;
+  border-radius: 2px;
+  outline: none;
+}
+.register .from form i {
+  position: absolute;
+  left: 55px;
+  bottom: 1px;
+}
+.register .from form .bottom {
+  background-color: #fff;
+  display: flex;
+}
+.register .from form .bottom .serve {
+  margin-left: 20px;
+  color: #666;
+}
+.register .from form .bottom .serve a {
+  color: #007AFF;
+}
+.register .loginMethod {
+  position: absolute;
+  bottom: -27%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+}
+.register .loginMethod img {
+  width: 28px;
+  height: 28px;
+  margin-left: 111px;
+  margin-top: 3px;
+}
