@@ -1,0 +1,56 @@
+.carShop {
+  height: 1334px;
+  background-color: #f4f4f4;
+}
+.carShop .carShopHeader {
+  height: 88px;
+  background-color: #fff;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carShop .carShopHeader p:nth-of-type(1) {
+  font-size: 36px;
+}
+.carShop .carShopHeader p:nth-of-type(2) {
+  font-size: 30px;
+  color: red;
+}
+.carShop .servicePolicy {
+  height: 70px;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.carShop .servicePolicy i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin-bottom: 1px;
+  margin-right: 4px;
+}
+.carShop img {
+  width: 248px;
+  height: 248px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+}
+.carShop .login {
+  width: 480px;
+  height: 92px;
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  transform: translateX(-50%);
+  line-height: 92px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #DD1A21;
+}
